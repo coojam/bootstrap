@@ -113,6 +113,12 @@ describe('progressbar directive', function () {
       expect(getBar(0).css('width')).toBe('0%');
     });
 
+    it('adjusts the "bar" width when max changes', function() {
+      $rootScope.max = 50;
+      $rootScope.$digest();
+      expect(getBar(0).css('width')).toBe('44%');
+   });
+
     it('transcludes "bar" text', function() {
       expect(getBar(0).text()).toBe('22/200');
     });

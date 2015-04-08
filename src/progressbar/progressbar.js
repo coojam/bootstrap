@@ -12,7 +12,7 @@ angular.module('ui.bootstrap.progressbar', [])
     this.bars = [];
 
     if (!angular.isDefined($attrs.max)) {
-        $scope.max = progressConfig.max;
+        $scope.max = angular.isDefined($scope.max) ? $scope.max : progressConfig.max;
     }
 
     this.addBar = function(bar, element) {
@@ -63,6 +63,7 @@ angular.module('ui.bootstrap.progressbar', [])
         require: '^progress',
         scope: {
             value: '=',
+            max: '=?',
             type: '@'
         },
         templateUrl: 'template/progressbar/bar.html',
@@ -81,6 +82,7 @@ angular.module('ui.bootstrap.progressbar', [])
         scope: {
             max: '=?',
             value: '=',
+            max: '=?',
             type: '@'
         },
         templateUrl: 'template/progressbar/progressbar.html',

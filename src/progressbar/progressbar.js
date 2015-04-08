@@ -80,7 +80,6 @@ angular.module('ui.bootstrap.progressbar', [])
         transclude: true,
         controller: 'ProgressController',
         scope: {
-            max: '=?',
             value: '=',
             max: '=?',
             type: '@'
